@@ -197,3 +197,4 @@ with open("lines.csv", "w", newline="") as f:
 print(f"utilities: {len(utilities)} rows")
 print(f"substations: {len(substations)} rows")
 print(f"lines: {len(lines)} rows")
+
