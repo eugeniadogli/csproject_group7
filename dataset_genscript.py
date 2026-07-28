@@ -171,11 +171,7 @@ for src_name, dst_name, utility_id in border_links:
         lid, utility_id, a, sub_a[1], b, sub_b[1], 330, dist,
         round(random.uniform(150, 400), 1), "Active", "Overhead",
     ])
-<<<<<<< HEAD
-    lid += 1
-=======
     lid+=1
->>>>>>> ec7bf8ecf689ba56bb8cd32c9c73a81fb1341a64
  
 # ---------------------------------------------------------------------------
 # Write CSVs
