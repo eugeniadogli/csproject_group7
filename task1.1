@@ -1,0 +1,88 @@
+import pandas as pd
+import numpy as np
+
+
+utilities = pd.read_csv("utilities.csv")
+substations = pd.read_csv("substations.csv")
+lines = pd.read_csv("lines.csv")
+#pd helps to read these files
+
+#step 2
+
+'''
+# Step 2: Handle missing values
+# Even though the generator produces clean data, treat this step seriously —
+# real grid asset registers always have gaps. Decide on imputation strategies
+# for different columns and document your decisions and rationale.
+ 
+
+'''
+
+utilities.head()
+#gives the rows of the data
+utilities.info()
+utilities.shape
+#finds size of data
+utilities.columns
+#to show column names (took time to process... ok didn't see anything)
+
+substations.head()
+#gives the rows of the data
+substations.info()
+substations.shape
+#finds size of data
+substations.columns
+
+lines.head()
+#gives the rows of the data
+lines.info()
+
+lines.shape
+lines.columns
+#not done though:
+
+
+#step 3
+'''
+step 3: Handle duplicates
+# Even though the generator produces clean data, treat this step seriously —
+'''
+
+if utilities.isnull().sum().sum() > 0:
+    print("utilities.csv has missing values")
+    print(utilities.isnull().sum())
+else:
+    print("utilities.csv has no missing values")
+
+if utilities.duplicated().sum() > 0:
+    print("utilities.csv has duplicates")
+    utilities = utilities.drop_duplicates()
+else:
+    print("utilities.csv has no duplicates")
+###
+
+if substations.isnull().sum().sum() > 0:
+    print("substations.csv has missing values")
+    print(substations.isnull().sum())
+else:
+    print("substations.csv has no missing values")
+
+if substations.duplicated().sum() > 0:
+    print("substations.csv has duplicates")
+    substations = substations.drop_duplicates()
+else:
+    print("substations.csv has no duplicates")
+###
+
+if lines.isnull().sum().sum() > 0:
+    print("lines.csv has missing values")
+    print(lines.isnull().sum()) 
+else:
+    print("lines.csv has no missing values")
+
+if lines.duplicated().sum() > 0:
+    print("lines.csv has duplicates")
+    lines = lines.drop_duplicates()
+else:
+    print("lines.csv has no duplicates")
+###
