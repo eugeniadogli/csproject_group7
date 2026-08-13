@@ -1,6 +1,7 @@
-import csv
 import folium
+import pandas as pd
 from geopy.distance import geodesic
+
 
 
 # Assigning the datasets generated to variables
@@ -47,7 +48,6 @@ with open('substations.csv', 'r') as s:
     type = []
     status = []
 
-
     for line1 in s:
         Substation_ID,Name,Short_Name,Region,Country,Latitude,Longitude,Voltage,Capacity,Commissioning_Year,Type,Status = line1.strip().split(',')
         substation_ID.append(Substation_ID)
@@ -55,13 +55,54 @@ with open('substations.csv', 'r') as s:
         short_name.append(Short_Name)
         region.append(Region)
         country.append(Country)
-        latitude.append(float(Latitude))
-        longitude.append(float(Longitude))
+        latitude.append(Latitude)
+        longitude.append(Longitude)
         voltage.append(Voltage)
         capacity.append(Capacity)
         commissioning_year.append(Commissioning_Year)
         type.append(Type)
         status.append(Status)
+
+
+
+with open('utilities.csv', 'r') as u:
+    utility_ID = []
+    uname = []
+    alias = []
+    code = []
+    utype = []
+    country = []
+    active = []
+
+    for line2 in u:
+        Utility_ID,Uname,Alias,Code,Utype,Country,Active = line2.strip().split(',')
+        utility_ID.append(Utility_ID)
+        uname.append(Uname)
+        alias.append(Alias)
+        code.append(Code)
+        utype.append(Utype)
+        country.append(Country)
+        active.append(Active)
+
+
+eco_footprints = pd.read_csv('substations.csv')
+
+
+with open('ghana_regions_detailed.geojson', 'r') as geojson_file:
+    geojson_data = geojson_file.read()
+ghana_url = geojson_data
+
+m = folium.Map(location=[7.9465, -1.0232], tiles='cartodbpositron', zoom_start=7)
+
+folium.GeoJson(ghana_url, name='geojson').add_to(m)
+folium.Choropleth(
+    geo_data = ghana_url,
+    name='choropleth',
+    data = eco_footprints,
+    columns=['Region', 'Capacity (MVA)'],
+    key_on = 'feature.properties.shapeName',
+).add_to(m)
+m.save("footprint.html")
 
 # Geographic analysis
 # - Recompute (or verify) line distances using the geodesic/haversine formula

@@ -1,0 +1,85 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": { "shapeName": "Greater Accra" },
+      "geometry": { "type": "Polygon", "coordinates": [[[-0.45, 5.50], [0.25, 5.50], [0.25, 6.00], [-0.45, 6.00], [-0.45, 5.50]]] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "shapeName": "Ashanti" },
+      "geometry": { "type": "Polygon", "coordinates": [[[-2.10, 6.10], [-1.00, 6.10], [-1.00, 7.30], [-2.10, 7.30], [-2.10, 6.10]]] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "shapeName": "Western" },
+      "geometry": { "type": "Polygon", "coordinates": [[[-3.20, 4.70], [-1.60, 4.70], [-1.60, 5.80], [-3.20, 5.80], [-3.20, 4.70]]] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "shapeName": "Western North" },
+      "geometry": { "type": "Polygon", "coordinates": [[[-3.30, 5.80], [-2.10, 5.80], [-2.10, 6.80], [-3.30, 6.80], [-3.30, 5.80]]] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "shapeName": "Central" },
+      "geometry": { "type": "Polygon", "coordinates": [[[-2.10, 5.10], [-0.80, 5.10], [-0.80, 5.90], [-2.10, 5.90], [-2.10, 5.10]]] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "shapeName": "Eastern" },
+      "geometry": { "type": "Polygon", "coordinates": [[[-1.20, 5.80], [0.10, 5.80], [0.10, 6.80], [-1.20, 6.80], [-1.20, 5.80]]] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "shapeName": "Volta" },
+      "geometry": { "type": "Polygon", "coordinates": [[[0.10, 5.70], [1.10, 5.70], [1.10, 7.20], [0.10, 7.20], [0.10, 5.70]]] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "shapeName": "Oti" },
+      "geometry": { "type": "Polygon", "coordinates": [[[0.00, 7.20], [0.90, 7.20], [0.90, 8.60], [0.00, 8.60], [0.00, 7.20]]] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "shapeName": "Ahafo" },
+      "geometry": { "type": "Polygon", "coordinates": [[[-2.80, 6.60], [-2.10, 6.60], [-2.10, 7.20], [-2.80, 7.20], [-2.80, 6.60]]] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "shapeName": "Bono" },
+      "geometry": { "type": "Polygon", "coordinates": [[[-3.00, 7.20], [-2.00, 7.20], [-2.00, 8.20], [-3.00, 8.20], [-3.00, 7.20]]] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "shapeName": "Bono East" },
+      "geometry": { "type": "Polygon", "coordinates": [[[-2.00, 7.30], [-0.50, 7.30], [-0.50, 8.80], [-2.00, 8.80], [-2.00, 7.30]]] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "shapeName": "Northern" },
+      "geometry": { "type": "Polygon", "coordinates": [[[-1.20, 8.80], [0.20, 8.80], [0.20, 10.10], [-1.20, 10.10], [-1.20, 8.80]]] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "shapeName": "Savannah" },
+      "geometry": { "type": "Polygon", "coordinates": [[[-2.80, 8.20], [-1.20, 8.20], [-1.20, 9.80], [-2.80, 9.80], [-2.80, 8.20]]] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "shapeName": "North East" },
+      "geometry": { "type": "Polygon", "coordinates": [[[-1.20, 10.10], [0.20, 10.10], [0.20, 10.70], [-1.20, 10.70], [-1.20, 10.10]]] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "shapeName": "Upper East" },
+      "geometry": { "type": "Polygon", "coordinates": [[[-1.20, 10.50], [0.10, 10.50], [0.10, 11.20], [-1.20, 11.20], [-1.20, 10.50]]] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "shapeName": "Upper West" },
+      "geometry": { "type": "Polygon", "coordinates": [[[-2.80, 9.80], [-1.20, 9.80], [-1.20, 11.10], [-2.80, 11.10], [-2.80, 9.80]]] }
+    }
+  ]
+}
