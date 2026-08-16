@@ -1,3 +1,8 @@
+# Ellen Maame Ama Hassan 
+# Proof of Data Analysis and Visualization of the datasets: utilities, substations, and lines
+# Data Analyst 
+
+# Exploratory Data Analysis (EDA)
 import pandas as pd
 # Loading the data from CSV files
 utilities = pd.read_csv('csproject_group7/utilities.csv')
@@ -19,7 +24,6 @@ print(lines.info())
 print(utilities.describe())
 print(substations.describe())
 print(lines.describe())
-
 
 print(substations.columns)
 
@@ -78,3 +82,95 @@ to handle higher voltages to efficiently transmit electricity over long distance
 However, there are some outliers in the data where substations with similar capacities have different voltages,
 which could be due to specific design considerations or operational requirements.
 '''
+
+# measuring their correlation
+# Correlation coefficient between capacity and voltage and it tells you how two variables are related to each other.
+correlation = substations["Capacity (MVA)"].corr(substations["Voltage (kV)"])
+print(f"The correlation between substation capacity and voltage is: {correlation:.2f}")
+
+# Interpretation of the correlation coefficient
+'''
+A correlation coefficient of 0.44 indicates a moderate positive correlation between substation capacity and voltage.
+This means that, in general, as the capacity of a substation increases, the voltage also tends to increase.
+However, the correlation is not very strong, suggesting that other factors may also influence the relationship between capacity and voltage in substations.
+'''
+# boxplot to visualize the distribution of substation capacities and identify any potential outliers
+plt.boxplot(substations["Capacity (MVA)"].dropna()) # dropna means remove or drop missing values.
+plt.ylabel("Capacity (MVA)")
+plt.title("Boxplot of Substation Capacities")
+plt.show()
+
+substations["Type"].value_counts()
+
+# Comparing the Capacity of Substations by Type using a boxplot
+substations.boxplot(column="Capacity (MVA)", by="Type")
+plt.xlabel("Substation Type")
+plt.ylabel("Capacity (MVA)")
+plt.title("Comparison of Substation Capacities by Type")
+plt.suptitle('') # to remove the default title
+
+plt.show()
+#Analysis of the boxplot
+'''
+The box plot shows that Transmission substations have the highest median capacity, 
+followed by Bulk Supply Points, while Distribution substations have the lowest median capacity.
+Transmission substations also have a relatively wide range of capacities, indicating greater variation among them.
+'''
+# Commission year 
+
+plt.hist(substations["Commissioning Year"].dropna(),bins = 20)
+plt.xlabel("Commissioning Year")
+plt.ylabel("Number of Substations")
+plt.title("Distribution of Substation Commission Years")
+plt.show()    
+
+# Statistial Analysis 
+# Select the Voltage and Capacity columns for statistical analysis and remove the missing values. 
+
+correlation_data = substations[["Voltage (kV)", "Capacity (MVA)"]].dropna()
+
+# number of observations
+n = len(correlation_data)
+print("The number of valid observations is :",n)
+
+# t - statistic calculation
+import math 
+r = 0.44
+n = 44
+t = (r * math.sqrt(n - 2)) / (math.sqrt(1 - r**2))
+print(f"The t-statistic is: {t:.2f}")
+# r tells you how strong the relationship is between the two variables,
+# n tells you how many data points you have.
+
+import numpy as np
+import pandas as pd 
+
+print("NumPy:",np.__version__)
+print("Pandas:",pd.__version__)
+
+import numpy as np
+correlation_data = substations[["Voltage (kV)", "Capacity (MVA)"]].dropna()
+
+x = correlation_data["Voltage (kV)"].to_numpy()
+y = correlation_data["Capacity (MVA)"].to_numpy()
+
+observed_r = np.corrcoef(x, y)[0, 1]
+np.random.seed(42)
+
+num_permutations = 10000
+count = 0
+
+for i in range(num_permutations):
+    shuffled_y = np.random.permutation(y)
+    random_r = np.corrcoef(x, shuffled_y)[0, 1]
+
+    if abs(random_r) >= abs(observed_r):
+        count += 1
+# Calculate p-value
+
+p_value = count / num_permutations
+print(f"The p-value is: {p_value}")
+
+
+
+
