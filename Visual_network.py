@@ -37,3 +37,10 @@ plt.figure(figsize=(12, 8))
 nx.draw(G, with_labels=True, node_size=200, node_color='lightblue', font_size=6)
 plt.title('National Grid Substation Network')
 plt.show()
+fig.write_html('substation_map.html')
+
+# A node with that many connections matter because smaller substations may be dependent on it for power distribution.
+# If it fails, it could lead to subsequent failures in the network.
+# The network visualization can be improved by using the capacity of the substations to size the nodes, 
+# and using the voltage of the lines to weight the edges. 
+# This would give a more precise representation of the network's structure.
