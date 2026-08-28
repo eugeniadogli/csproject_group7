@@ -93,3 +93,4 @@ for i, component in enumerate(components):
 # - Measure network efficiency
 efficiency = nx.global_efficiency(G)
 print("Network Efficiency:", efficiency)
+

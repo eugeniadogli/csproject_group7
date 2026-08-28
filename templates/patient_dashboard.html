@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patient Dashboard - ClinicCare</title>
+</head>
+
+<body>
+
+    <h1>ClinicCare-Lite</h1>
+
+    <h2>Patient Dashboard</h2>
+
+    <p>Welcome, {{ full_name }}!</p>
+
+    <hr>
+
+    <h3>My Health Tasks</h3>
+    <p>View your assigned tasks and submission deadlines.</p>
+    {% if tasks %}
+
+    {% for task in tasks %}
+
+        <div>
+            <h4>{{ task["title"] }}</h4>
+
+            <p>
+                <strong>Instructions:</strong>
+                {{ task["instructions"] }}
+            </p>
+
+            <p>
+                <strong>Due Date:</strong>
+                {{ task["due_date"] }}
+            </p>
+
+            <p>
+                <strong>Status:</strong>
+                {{ task["status"] }}
+            </p>
+
+            <hr>
+        </div>
+
+    {% endfor %}
+
+{% else %}
+
+    <p>You currently have no assigned tasks.</p>
+
+{% endif %}
+
+    <h3>Appointments</h3>
+    <p>View your upcoming appointments and reminders.</p>
+    <button>View Appointments</button>
+
+    <h3>Messages</h3>
+    <p>View messages from clinic personnel.</p>
+    <button>Open Inbox</button>
+
+    <h3>Notifications</h3>
+    <p>View your latest notifications and confirmations.</p>
+    <button>View Notifications</button>
+
+    <h3>My Engagement</h3>
+    <p>View your personal task-completion and appointment history.</p>
+    <button>View My History</button>
+
+    <hr>
+
+    <p>
+        <strong>Important:</strong>
+        ClinicCare messaging is not monitored continuously
+        and must not be used for emergencies.
+    </p>
+
+    <br>
+
+    <a href="/logout">Log out</a>
+
+</body>
+</html>

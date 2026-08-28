@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Health Task - ClinicCare</title>
+</head>
+
+<body>
+
+    <h1>ClinicCare-Lite</h1>
+
+    <h2>Create Health Task</h2>
+
+    <form method="POST">
+
+        <label>Patient:</label><br>
+        <select name="patient_id" required>
+
+            {% for patient in patients %}
+                <option value="{{ patient['user_id'] }}">
+                    {{ patient['full_name'] }} - {{ patient['email'] }}
+                </option>
+            {% endfor %}
+
+        </select>
+
+        <br><br>
+
+        <label>Task Title:</label><br>
+        <input type="text" name="title" required>
+
+        <br><br>
+
+        <label>Instructions:</label><br>
+        <textarea name="instructions" rows="5" cols="40" required></textarea>
+
+        <br><br>
+
+        <label>Due Date:</label><br>
+        <input type="date" name="due_date" required>
+
+        <br><br>
+
+        <button type="submit">Assign Task</button>
+
+    </form>
+
+    <br>
+
+    <a href="/clinician-dashboard">Back to Dashboard</a>
+
+</body>
+</html>
