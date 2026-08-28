@@ -6,7 +6,6 @@ from geopy.distance import geodesic
 import math
 
 
-
 # Assigning the datasets generated to variables
 with open('lines.csv', 'r') as f:
     line_ID = []
@@ -34,7 +33,6 @@ with open('lines.csv', 'r') as f:
         capacity.append(Capacity)
         status.append(Status)
         line_type.append(Line_Type)
-
 
 
 with open('substations.csv', 'r') as s:
@@ -65,7 +63,6 @@ with open('substations.csv', 'r') as s:
         commissioning_year.append(Commissioning_Year)
         type.append(Type)
         status.append(Status)
-
 
 
 with open('utilities.csv', 'r') as u:
