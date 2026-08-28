@@ -213,14 +213,14 @@ for region_name, group in grouped_regions:
 
 # - Regional and cross-border connectivity analysis
 cross_border_pairs = [
-    (35, 37),  # Bawku Substation (Ghana) <-> Bolgatanga Interconnection (Burkina)
-    (37, 43),  # Bolgatanga Intercon <-> Bobo-Dioulasso Hub
-    (15, 38),  # Axim Substation (Ghana) <-> Elubo Border Station (Cote d'Ivoire)
-    (38, 42),  # Elubo Border <-> Abidjan Transmission Hub
-    (24, 39),  # Ho Substation (Ghana) <-> Aflao Border Station (Togo)
-    (39, 40),  # Aflao Border <-> Lome Transmission Hub
-    (40, 41),  # Lome (Togo) <-> Cotonou (Benin)
-    (42, 44),  # Abidjan (Cote d'Ivoire) <-> Conakry (Guinea)
+    (35, 37),  
+    (37, 43),  
+    (15, 38),  
+    (38, 42), 
+    (24, 39),  
+    (39, 40),  
+    (40, 41),  
+    (42, 44),  
 ]
 
 for src_id, tgt_id in cross_border_pairs:
